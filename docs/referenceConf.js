@@ -181,7 +181,7 @@ exports.config = {
   // ---------------------------------------------------------------------------
   //
   // A base URL for your application under test. Calls to protractor.get()
-  // with relative paths will be prepended with this.
+  // with relative paths will be resolved against this URL (via url.resolve)
   baseUrl: 'http://localhost:9876',
 
   // CSS Selector for the element housing the angular app - this defaults to
@@ -340,5 +340,10 @@ exports.config = {
 
   // Turns off source map support.  Stops protractor from registering global
   // variable `source-map-support`.  Defaults to `false`
-  skipSourceMapSupport: false
+  skipSourceMapSupport: false,
+
+  // Turns off WebDriver's environment variables overrides to ignore any
+  // environment variable and to only use the configuration in this file.
+  // Defaults to `true`
+  environmentOverrides: true
 };
